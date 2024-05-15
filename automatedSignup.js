@@ -329,9 +329,7 @@ const stepZero = () => {
   let weekDates;
 };
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  stepOne();
-});
+stepOne();
 
 // TODO - Get the date of the booking.
 // t.parentElement.parentElement.parentElement.children[0].getElementsByClassName('FieldLayout---input_below')[0].innerText
