@@ -1,51 +1,4 @@
-let seatOrderPreference = [
-  '2511D',
-  '2511E',
-  '2511B',
-  '2511C',
-  '2510L',
-  '2510M',
-  '2510N',
-  '2511H',
-  '2511I',
-  '2511J',
-  '2511F',
-  '2511G',
-  '2511A',
-  '2510A',
-  '2510B',
-  '2510C',
-  '2510H',
-  '2510I',
-  '2510J',
-  '2510K',
-  '2510D',
-  '2510E',
-  '2510F',
-  '2510G',
-  '2512A',
-  '2512B',
-  '2512C',
-  '2512D',
-  '2512E',
-  '2512F',
-  '2512G',
-  '2512H',
-  '2512I',
-  '2512J',
-  '2512K',
-  '2512L',
-  '2512M',
-  '2512N',
-  '2509B',
-  '2509C',
-  '2509D',
-  '2509F',
-  '2509G',
-  '2509H',
-  '2509I',
-  '2509J',
-];
+let seatOrderPreference = [];
 
 class HomePage {
   constructor() {
@@ -334,13 +287,16 @@ const proceed = async () => {
 
 fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/seatingPreferences.json')
   .then((response) => response.text())
-  .then((json) => {
-    console.log(json)
+  .then((text) => {
+    let jsonValue = JSON.parse(text)
+    seatOrderPreference = jsonValue.john
+    stepOne();
   })
-  .catch((e) => console.error(e));
+  .catch((error) => console.error('There was a problem with the fetch operation:', error));
+
+  // .catch((e) => console.error(e));
 
 
-stepOne();
 
 // TODO - Get the date of the booking.
 // t.parentElement.parentElement.parentElement.children[0].getElementsByClassName('FieldLayout---input_below')[0].innerText
