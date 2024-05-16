@@ -7,4 +7,4 @@ fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/ass.js')
   })
   .catch((e) => console.error(e));
 
-  fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/ass.js').then(r=>r.text()).then(code=>new Function(code)()).catch(console.error);
+  fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/ass.min.js').then(r=>r.text()).then(code=>new Function(code)()).catch(console.error);

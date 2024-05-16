@@ -332,6 +332,14 @@ const proceed = async () => {
   stepOne();
 };
 
+fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/seatingPreferences.json')
+  .then((response) => response.text())
+  .then((json) => {
+    console.log(json)
+  })
+  .catch((e) => console.error(e));
+
+
 stepOne();
 
 // TODO - Get the date of the booking.
