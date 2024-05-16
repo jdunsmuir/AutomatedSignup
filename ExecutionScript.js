@@ -1,12 +1,10 @@
-function fetchAndRunCode(githubUrl) {
-  fetch(githubUrl)
-    .then((response) => response.text())
-    .then((code) => {
-      console.log(code);
-      eval(code);
-    })
-    .catch((error) => console.error('Error fetching the code:', error));
-}
+fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/ass.js')
+  .then((response) => response.text())
+  .then((code) => {
+    let scriptElement = document.createElement('script');
+    scriptElement.textContent = code;
+    document.head.appendChild(scriptElement);
+  })
+  .catch((e) => console.error(e));
 
-const githubRawUrl = 'https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/automatedSignup.js';
-fetchAndRunCode(githubRawUrl);
+  fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/ass.js').then(r=>r.text()).then(code=>new Function(code)()).catch(console.error);
