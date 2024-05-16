@@ -1,3 +1,4 @@
+let user = 'john';
 fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/ass.js')
   .then((response) => response.text())
   .then((code) => {

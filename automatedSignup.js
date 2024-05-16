@@ -289,7 +289,7 @@ fetch('https://raw.githubusercontent.com/jdunsmuir/AutomatedSignup/main/seatingP
   .then((response) => response.text())
   .then((text) => {
     let jsonValue = JSON.parse(text)
-    seatOrderPreference = jsonValue.john
+    seatOrderPreference = jsonValue[user]
     stepOne();
   })
   .catch((error) => console.error('There was a problem with the fetch operation:', error));
